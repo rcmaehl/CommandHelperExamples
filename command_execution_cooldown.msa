@@ -1,6 +1,7 @@
 /*
 
-This exmaple code allows you delay repeated execution of a command.
+This exmaple code allows you delay repeated execution of a command. This by default persists across server restart for those commands that require REALLY long cooldowns.
+
 */
 
 # Change /example to whatever command you want to have a cooldown, it can include parameters too such as /t spawn and will only match those exact parameters
