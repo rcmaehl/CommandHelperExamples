@@ -1,0 +1,39 @@
+/*
+
+This exmaple code allows you delay repeated execution of a command.
+*/
+
+# Change /example to whatever command you want to have a cooldown, it can include parameters too such as /t spawn and will only match those exact parameters
+
+*:/example = >>>
+
+    # How many seconds they have to wait before between using /example
+    assign(@cooldown, 10)
+    
+    # What command to run
+    assign(@cooldown_command, '/example')
+
+    # If you're using multiples of this code, be sure to give each a unique AlphaNumeric key
+    assign(@key, 'example1')
+
+    # Do not modify this section
+    assign(@last_execution, get_value(@key . player()))
+
+    # Ensure the persistent variable exists. If it doesn't, skip.
+    if(not(is_null(@last_execution)),
+        # Note that time is in ms, not s. So we always divide it by 1000.
+        if(gt(add(@lastTSpawn,@cooldown), divide(time(), 1000)),
+            # then
+            msg('Less than ' . @cooldown . ' seconds since last ' . @cooldown_command)
+            die(floor(subtract(add(@last_execution, @cooldown), divide(time(), 1000))). ' seconds to go.')
+        , #else
+            # Save the current time() (in seconds)
+            store_value(@key . player(), divide(time(), 1000))
+            run(@cooldown_command)
+        )
+    , #else
+        # Save the current time() (in seconds)
+        store_value(@key . player(), divide(time(), 1000))
+        run(@cooldown_command)
+    )
+<<<
