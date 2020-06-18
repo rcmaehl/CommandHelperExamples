@@ -15,7 +15,7 @@ This exmaple code allows you delay the actual excution of a command. Unlike set_
     assign(@delayed_command, '/example')
 
     # If you're using multiples of this code, be sure to give each a unique AlphaNumeric key
-    assign(@key, 'example1')
+    assign(@key, 'CEDExample1')
 
     # What message to display
     msg(Color('Red') . 'Teleporting in ' . @cooldown . ' seconds')
