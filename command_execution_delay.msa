@@ -1,0 +1,28 @@
+/*
+
+This exmaple code allows you delay the actual excution of a command. Unlike set_timeout(), this example resets the timer to prevent the command being spammed after the timer runs out.
+
+*/
+
+# Change /example to whatever command you want delayed, it can include parameters too such as /t spawn and will only match those exact parameters
+
+*:/example = >>>
+
+    # How many seconds before executiong the command
+    assign(@delayed_command_cooldown, 10)
+    
+    # What command to run
+    assign(@delayed_command, '/example')
+
+    # If you're using multiples of this code, be sure to give each a unique AlphaNumeric key
+    assign(@key, 'example1')
+
+    # What message to display
+    msg(Color('Red') . 'Teleporting in ' . @cooldown . ' seconds')
+    
+    # Do not modify this section
+	queue_clear(@key . player())
+    queue_delay_front(multiply(@delayed_command_cooldown,1000), @key . player())
+    queue_push(closure(){run(@delayed_command);}, @key . player())
+
+<<<
