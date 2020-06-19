@@ -1,6 +1,6 @@
 /*
 
-This exmaple code, when placed in main.ms, handles the joining of players through the floodgate plugin. Various few plugin makers care to use the floodgate API to handle exceptions, so we'll handle it ourselves.
+This exmaple code, when placed in main.ms, handles the joining of players through the floodgate plugin. Few plugin makers care to use the floodgate API to handle exceptions, so we'll handle it ourselves.
 
 */
 
