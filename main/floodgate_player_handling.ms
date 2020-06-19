@@ -11,6 +11,6 @@ bind(player_join, null, null, @event, @floodgate_prefix) {
     @joined = @event['player']
     if(string_starts_with(@joined, @floodgate_prefix){
         # What command console should run when a player joins
-        runas(~console, '/say ' . puuid(@joined) . ' joined via Floodgate!')
+        runas(~console, '/say ' . @joined . '(' . puuid(@joined) . ') joined via Floodgate!')
     }
 }
