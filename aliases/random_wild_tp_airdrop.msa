@@ -1,0 +1,45 @@
+/*
+
+This exmaple code allows a player to randomly TP into the wild similar to /wild or /tpr found in some servers
+TODO: Currently the user can drop anywhere in the defined square, allow other shapes
+
+*/
+
+# Change /wild to whatever command you want to trigger than random teleport
+
+*:/wild = >>>
+    # Position of spawn or TP calculation center
+    @X = 0
+    @Z = 0
+    
+    # Minimum and Maximum distance to teleport
+    @MinDistance = 1000
+    @MaxDistance = 8000
+    
+    # Height to spawn player, lower than 155 may suffocate the player, too high and the player may die from fall damage
+    @Y = 155
+    
+    # Message to diplay
+    @Message = Color('Yellow') . [AirDrop]' . color('White') . ' Bombs Away!'
+    
+    ### DO NOT MODIFY BELOW THIS SECTION ###
+    
+    # Randomize X
+    @NewX = rand(@MinDistance,@MaxDistance)
+    if(rand() < 0.5,
+        @NewX = neg(@NewX)
+    )
+    @X = add(@X, @NewX)
+
+    # Randomize Z
+    @NewZ = rand(@MinDistance,@MaxDistance)
+    if(rand() < 0.5,
+        @NewZ = neg(@NewZ)
+    )
+    @Z = add(@Z, @NewZ)
+    
+    msg(@Message)
+    # Give Resistance 5 to prevent fall damage
+    set_peffect(player(), 11, 5, 10)
+    set_ploc(player(), @X, @Y, @Z)
+<<<
