@@ -17,7 +17,7 @@ This exmaple code allows you delay repeated execution of a command. This by defa
     # If you're using multiples of this code, be sure to give each a unique AlphaNumeric key
     assign(@key, 'example1')
 
-    # Do not modify this section
+    ### DO NOT MODIFY BELOW THIS SECTION ###
     assign(@last_execution, get_value(@key . player()))
 
     # Ensure the persistent variable exists. If it doesn't, skip.
