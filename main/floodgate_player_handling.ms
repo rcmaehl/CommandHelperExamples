@@ -7,7 +7,7 @@ This exmaple code, when placed in main.ms, handles the joining of players throug
 # What the prefix you defined in floodgate is
 assign(@floodgate_prefix, '[B]')
 
-bind(player_join, null, null, @event) {
+bind(player_join, null, null, @event, @floodgate_prefix) {
     @joined = @event['player']
     if(string_starts_with(@joined, @floodgate_prefix){
         # What command console should run when a player joins
