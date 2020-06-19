@@ -20,7 +20,7 @@ This exmaple code allows you delay the actual excution of a command. Unlike set_
     # What message to display
     msg(Color('Red') . 'Teleporting in ' . @cooldown . ' seconds')
     
-    # Do not modify this section
+    ### DO NOT MODIFY BELOW THIS SECTION ###
     queue_clear(@key . player())
     queue_delay_front(multiply(@delayed_command_cooldown,1000), @key . player())
     queue_push(closure(){run(@delayed_command);}, @key . player())
