@@ -22,7 +22,7 @@ This exmaple code allows you delay the actual excution of a command. Unlike set_
     
     ### DO NOT MODIFY BELOW THIS SECTION ###
     queue_clear(@key . player())
-    queue_delay_front(multiply(@delayed_command_cooldown,1000), @key . player())
+    queue_delay_front(multiply(@delay,1000), @key . player())
     queue_push(closure(){run(@delayed_command);}, @key . player())
 
 <<<
