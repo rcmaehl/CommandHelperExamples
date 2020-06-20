@@ -18,12 +18,12 @@ This exmaple code allows you delay repeated execution of a command. This by defa
     assign(@key, 'example1')
 
     ### DO NOT MODIFY BELOW THIS SECTION ###
-    assign(@last_execution, get_value(@key . player()))
+    assign(@last_execution,@last_execution get_value(@key . player()))
 
     # Ensure the persistent variable exists. If it doesn't, skip.
     if(not(is_null(@last_execution)),
         # Note that time is in ms, not s. So we always divide it by 1000.
-        if(gt(add(@lastTSpawn,@cooldown), divide(time(), 1000)),
+        if(gt(add(@last_execution,@cooldown), divide(time(), 1000)),
             # then
             msg('Less than ' . @cooldown . ' seconds since last ' . @cooldown_command)
             die(floor(subtract(add(@last_execution, @cooldown), divide(time(), 1000))). ' seconds to go.')
