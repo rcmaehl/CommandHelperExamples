@@ -30,11 +30,11 @@ This exmaple code allows you delay repeated execution of a command. This by defa
         , #else
             # Save the current time() (in seconds)
             store_value(@key . player(), divide(time(), 1000))
-            run_cmd(@cooldown_command)
+            run(@cooldown_command)
         )
     , #else
         # Save the current time() (in seconds)
         store_value(@key . player(), divide(time(), 1000))
-        run_cmd(@cooldown_command)
+        run(@cooldown_command)
     )
 <<<
