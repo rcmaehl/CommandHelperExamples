@@ -21,7 +21,7 @@ TODO: Currently the user can drop anywhere in the defined square, allow other sh
     @Y = 155
     
     # Message to diplay
-    @Message = Color('Yellow') . [AirDrop]' . color('White') . ' Bombs Away!'
+    @Message = color('Yellow') . '[AirDrop]' . color('White') . ' Bombs Away!'
     
     ### DO NOT MODIFY BELOW THIS SECTION ###
     
