@@ -18,7 +18,7 @@ This exmaple code allows you delay the actual excution of a command. Unlike set_
     assign(@key, 'example1')
 
     # What message to display
-    msg(Color('Red') . 'Teleporting in ' . @cooldown . ' seconds')
+    msg(color('Red') . 'Teleporting in ' . @cooldown . ' seconds')
     
     ### DO NOT MODIFY BELOW THIS SECTION ###
     queue_clear(@key . player())
