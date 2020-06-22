@@ -1,6 +1,7 @@
 /*
 
-This exmaple code allows a player to randomly TP into the wild similar to /wild or /tpr found in some servers
+This exmaple code allows a player to randomly TP into the wild similar to /wild or /tpr found in some servers.
+Be sure to give the rank you want to be able to do this commandhelper.func.use.set_peffect and commandhelper.func.use.set_ploc
 TODO: Currently the user can drop anywhere in the defined square, allow other shapes
 
 */
